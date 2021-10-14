@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-container {
+  align-items: center;
+  border: 2px solid black;
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+.header-container h1 {
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+.header-nav a {
+  color: whitesmoke;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.header-select {
+  background-color: black;
+  border: none;
+  color: whitesmoke;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.main-movie {
+  background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('./imagens/mk.jpg');
+  background-size: cover;
+  height: 450px;
+  margin-top: 10px;
+  padding: 60px;
+}
+
+.main-tittle {
+
+  font-weight: 900;
+  max-width: 350px;
+  min-height: 300px;
+}
+
+.main-span {
+  color: green;
+  display: flex;
+  margin: 5px;
+}
+
+.main-span p {
+  color: whitesmoke;
+  margin-left: 25px;
+}
+
+.sinopse {
+
+  font-weight: 900;
+  margin: 10px;
+}
+
+.paragraph {
+  font-weight: 900;
+  margin-top: 15px;
+}
