@@ -71,7 +71,46 @@ body {
   margin: 10px;
 }
 
-.paragraph {
+.paragraph-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   font-weight: 900;
   margin-top: 15px;
+  min-height: 140px;
+}
+
+.button-one {
+  background-color: black;
+  border-top: none;
+  border-left: none;
+  box-shadow: 2px 2px 5px grey;
+  color: red;
+  font-size: 15px;
+  font-weight: 900;
+  margin-left: 17px;
+  padding: 5px;
+}
+
+.button-two {
+  background-color: black;
+  border-top: none;
+  border-left: none;
+  box-shadow: 2px 2px 5px grey;
+  color: red;
+  font-size: 15px;
+  font-weight: 900;
+  margin-left: 20px;
+  padding: 5px;
+}
+
+.button-one:hover {
+  box-shadow: 2px 2px 5px greenyellow;
+  color: green;
+}
+
+.button-two:hover {
+  box-shadow: 2px 2px 5px greenyellow;
+  color: green;
 }
