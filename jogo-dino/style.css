@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('midia/fundo_hq.jpg');
+  background-size: 75%;
+  max-width: 50%;
+}
+
+.sonic {
+  bottom: 10px;
+  position: absolute;
+}
