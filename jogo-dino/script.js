@@ -1,38 +1,46 @@
-// seleciona o sonic
-const sonicRunning = document.querySelector('.sonic');
+const sonicRunning = document.querySelector('.sonic'); // seleciona o sonic
+const background = document.querySelector('.background');
 let isJumping = false; // verifica se está pulando
 
-// define um evento de clicar na barra de espaço
-const  handleKeyCode = ({ keyCode }) => {
+const  handleKeyCode = ({ keyCode }) => { // lida com apertar a tecla
   if ((keyCode === 32) & !isJumping) {
     jump();
   };
 };
 
-// função que lida com os pulos
-const jump = () => {
+const jump = () => { // função que lida com os pulos
   let position = 0;
   isJumping = true;
   let upInterval = setInterval(() => {
-    // condição para parar de subir
-    if (position >= 150) {
+    if (position >= 150) { // condição para parar de subir
       clearInterval(upInterval)
-      // controla a descida
-      let downInterval = setInterval(() => {
+
+      let downInterval = setInterval(() => { // controla descida
+      
         if (position <= 0) {
           clearInterval(downInterval)
           isJumping = false;
         } else {
-          position -= 20;
+          position -= 18;
           sonicRunning.style.bottom = `${position}px`;          
         }
       }, 30);
-    } else {
-      // controla a subida
-      position += 20;
+    } else { // controla a subida
+      position += 18;
       sonicRunning.style.bottom = `${position}px`;
     }
   }, 30) 
 }
 
-document.addEventListener('keyup', handleKeyCode);
+const createObstacle = () => {
+  const obstacle = document.createElement('div');
+  let obstaclePosition = 1000;
+  obstacle.classList.add('sonicObstacle');
+  // sonicObstacle.style.left =  500 + 'px';
+  background.appendChild(obstacle);
+}
+
+createObstacle();
+
+// define um evento de clicar na barra de espaço
+document.addEventListener('keydown', handleKeyCode);

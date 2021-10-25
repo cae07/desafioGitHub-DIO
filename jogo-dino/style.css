@@ -13,3 +13,11 @@ body {
   bottom: 10px;
   position: absolute;
 }
+
+.sonicObstacle {
+  position: absolute;
+  bottom: 10ṕx;
+  height: 60px;
+  width: 60px;
+  background: red;
+}
