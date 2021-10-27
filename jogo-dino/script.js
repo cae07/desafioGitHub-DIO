@@ -34,10 +34,19 @@ const jump = () => { // função que lida com os pulos
 
 const createObstacle = () => {
   const obstacle = document.createElement('div');
-  let obstaclePosition = 1000;
+  let obstaclePosition = 1280; 
   obstacle.classList.add('sonicObstacle');
-  // sonicObstacle.style.left =  500 + 'px';
+  obstacle.style.left =  `1280`;
   background.appendChild(obstacle);
+
+  let leftInterval = setInterval(() => {
+    obstaclePosition -= 10;
+    obstacle.style.left = `${obstaclePosition}px`;   
+    
+    if (obstaclePosition < -60) {
+      clearInterval(leftInterval);
+    }
+  }, 20)
 }
 
 createObstacle();

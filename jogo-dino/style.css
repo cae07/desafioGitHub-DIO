@@ -15,8 +15,9 @@ body {
 }
 
 .sonicObstacle {
+  left: 500px;
   position: absolute;
-  bottom: 10ṕx;
+  bottom: 10px;
   height: 60px;
   width: 60px;
   background: red;
