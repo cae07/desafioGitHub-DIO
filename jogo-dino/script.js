@@ -35,6 +35,9 @@ const jump = () => { // função que lida com os pulos
 const createObstacle = () => {
   let obstaclePosition = 1250; // define posição inicial do obstaculo
   let randomTime = Math.random() * 6000; //randoniza o tempo que o obstaculo reaparece
+  const resetButton = document.createElement('button'); // cria botao reset
+  resetButton.classList.add('reset-button');
+  resetButton.innerText = 'RESET';
 
   const obstacle = document.createElement('div'); // cria o obstaculo
   obstacle.classList.add('sonicObstacle');
@@ -49,9 +52,10 @@ const createObstacle = () => {
       clearInterval(leftInterval);
       background.removeChild(obstacle);
     }
-    else if (obstaclePosition > 0 && obstaclePosition < 60 && position < 60) {
+    else if (obstaclePosition > 0 && obstaclePosition < 60 && position < 60) { // lida com sonic bater no obstaculo
       clearInterval(leftInterval);
       document.body.innerText = 'GAME OVER';
+      background.appendChild(resetButton);
     }
     else {
       obstaclePosition -= 10;

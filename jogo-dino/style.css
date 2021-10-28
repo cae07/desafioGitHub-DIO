@@ -37,3 +37,9 @@ body {
   background-color: red;
   border-radius: 50%;
 }
+
+.reset-button {
+  background-color: red;
+  height: 30px;
+  width: 60px;
+}
