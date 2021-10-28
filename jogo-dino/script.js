@@ -1,6 +1,7 @@
 const sonicRunning = document.querySelector('.sonic'); // seleciona o sonic
 const background = document.querySelector('.background');
 let isJumping = false; // verifica se está pulando
+let position = 0; // posição do sonic
 
 const  handleKeyCode = ({ keyCode }) => { // lida com apertar a tecla
   if ((keyCode === 32) & !isJumping) {
@@ -9,7 +10,6 @@ const  handleKeyCode = ({ keyCode }) => { // lida com apertar a tecla
 };
 
 const jump = () => { // função que lida com os pulos
-  let position = 0;
   isJumping = true;
   let upInterval = setInterval(() => {
     if (position >= 150) { // condição para parar de subir
@@ -33,20 +33,33 @@ const jump = () => { // função que lida com os pulos
 }
 
 const createObstacle = () => {
-  const obstacle = document.createElement('div');
-  let obstaclePosition = 1280; 
+  let obstaclePosition = 1250; // define posição inicial do obstaculo
+  let randomTime = Math.random() * 6000; //randoniza o tempo que o obstaculo reaparece
+
+  const obstacle = document.createElement('div'); // cria o obstaculo
   obstacle.classList.add('sonicObstacle');
-  obstacle.style.left =  `1280`;
+  obstacle.style.left =  `1250`;
   background.appendChild(obstacle);
 
-  let leftInterval = setInterval(() => {
+  let leftInterval = setInterval(() => { // lida com animaçao do obstaculo 
     obstaclePosition -= 10;
-    obstacle.style.left = `${obstaclePosition}px`;   
-    
-    if (obstaclePosition < -60) {
+    obstacle.style.left = `${obstaclePosition}px`;
+
+    if (obstaclePosition < -60) { // condiçao para resetar obstaculo e validar q sonic não bateu nele
       clearInterval(leftInterval);
+      background.removeChild(obstacle);
     }
-  }, 20)
+    else if (obstaclePosition > 0 && obstaclePosition < 60 && position < 60) {
+      clearInterval(leftInterval);
+      document.body.innerText = 'GAME OVER';
+    }
+    else {
+      obstaclePosition -= 10;
+      obstacle.style.left = `${obstaclePosition}px`;
+    };
+  }, 25)
+
+  setTimeout(createObstacle, randomTime);
 }
 
 createObstacle();
