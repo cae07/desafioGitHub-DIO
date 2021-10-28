@@ -18,6 +18,7 @@ body {
   background-image: url('midia/fundo_hq.jpg');
   background-repeat: repeat-x;
   background-size: 75%;
+  color: white;
   font-size: 75px;
   min-height: 100vh;
   text-align: center;
@@ -39,6 +40,7 @@ body {
 }
 
 .container-placar {
+  color: white;
   align-items: flex-start;
   display: flex;
 }
