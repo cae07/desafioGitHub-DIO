@@ -19,8 +19,8 @@ body {
   background-repeat: repeat-x;
   background-size: 75%;
   font-size: 75px;
-  text-align: center;
   min-height: 100vh;
+  text-align: center;
 }
 
 .sonic {
@@ -29,17 +29,21 @@ body {
 }
 
 .sonicObstacle {
-  left: 500px;
-  position: absolute;
   bottom: 10px;
-  height: 60px;
-  width: 60px;
   background-color: red;
   border-radius: 50%;
+  height: 60px;
+  left: 500px;
+  position: absolute;
+  width: 60px;
 }
 
-.reset-button {
-  background-color: red;
-  height: 30px;
-  width: 60px;
+.container-placar {
+  align-items: flex-start;
+  display: flex;
+}
+
+.placar {
+  font-size: 50px;
+  margin-left: 20px;
 }
